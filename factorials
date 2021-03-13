@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+
+long double fact(int N) // Функція з рекурсією
+{
+    if(N < 0) 
+        return 0;
+    if (N == 0) 
+        return 1; // fact from 0 = 1
+    else 
+        return N * fact(N - 1); // recursion
+}
+long double fact2(int N) // Функція без рекурсії
+{
+    if(N < 0) 
+        return 0;
+    if (N == 0) 
+        return 1;
+
+    int count = N;
+    for (int i = 1; i < count; i++)
+    {
+      N*= i;
+    }
+    return N;
+
+}
+
+int main() {
+
+  int N;
+  cout << "Enter number: ";
+  cin >> N;
+  cout << "Factorial with recursion: " << N << " = " << fact(N) << endl;
+  cout << "Factorial without recursion: " << N << " = " << fact2(N) << endl;
+  return 0;
+  
+}
